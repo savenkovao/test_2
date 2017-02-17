@@ -1,0 +1,122 @@
+<!-- В документе используются семантические теги <nav>, <header>, <section>, которые поддерживаются стандартом HTML5. Для того, чтобы браузер корректно их отобразил в теге head нужно указать соответствующий тип текущего документа DTD. Для html5 им является !DOCTYPE. Т.е. в результате html тег должен выглядеть так <!DOCTYPE html>. Подробнее о DTD можно почитать тут - https://webref.ru/html/!doctype -->
+
+<html>
+
+<head>
+<!-- В метатеге meta указана кодировка windows-1251, она достаточно устарела и в данном случае не поддерживает кириллические символы. Для короректного отображения текста стоит указать кодировку Юникода "UTF-8". Сейчас именно она обеспечивает наибольшую поддержку различных симоволов. -->
+  
+  <!-- <meta charset="UTF-8"> -->
+
+  <meta charset="windows-1251">
+  <title>Document</title>
+  <!-- Здесь опечатка не "ling", а "link" -->
+   <ling rel="stylesheet" href="css/reset.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js"></script>
+</head>
+
+<body>
+  <nav class="blockLayeredNavigation">
+    <ul class="navMenu">
+    <!-- Пока в атрибуте href нет сслыок, можно было бы туда поставить заглушки, вот так href="#"-->
+      <li><a href="">Lorem</a></li>
+      <li><a href="">ipsum</li>
+      <li><a href="">laboriosam</a></li>
+      <li><a class="7-element" href="">Nostrum</a></li>
+    </ul>
+  </nav>
+
+<!-- Для своего удобства и особенно при работе с командой разработчиков стоит уделить 
+внимание удобочитаемости написанного кода. В html неофициально принято распологать
+внутренние теги на определеннои расстоянии от родительского( при чем эти расстояния должны быть кратны определенному
+числу 1/2/4 пробела - как нравится, как договоритесть с командой), т.е. "елочкой", как это правильно
+сделано в блоке меню. Так делать хорошо:
+
+  <nav class="blockLayeredNavigation">
+    <ul class="navMenu">
+      <li><a href="">Lorem</a></li>
+      <li><a href="">ipsum</li>
+      <li><a href="">laboriosam</a></li>
+      <li><a class="7-element" href="">Nostrum</a></li>
+    </ul>
+  </nav>
+
+  Так делать НЕ хорошо (трудночитаемо, плохо видно структуру - для человеческого глаза):
+
+  <header>
+  <div class="wrap1">
+  <div class="wrap2">
+  <h1 id="12345">Lorem ipsum!</h1>
+  <br>
+  <img src="http://webcoma.ru/images/html.jpg"  alt="">
+  <br>
+  <p id="wrap1-boks">
+-->
+<header>
+<div class="wrap1">
+<div class="wrap2">
+<h1 id="12345">Lorem ipsum!</h1>
+<br>
+
+<!-- Согласно стандарту html атрибут alt тега img должен содержать описание изображения
+рекомендуется всегда его заполнять. Подробнее: http://htmlbook.ru/html/img/alt
+ -->
+<img src="http://webcoma.ru/images/html.jpg"  alt="">
+<br>
+<p id="wrap1-boks">
+<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque nisi repudiandae non iste provident cum labore corrupti quas! Temporibus placeat ex nisi assumenda. Ducimus ipsam, nostrum quos provident. Ut, amet.</span>
+<hr>
+<!-- Использование атрибута style в теге html разметки не приветствуется разработчиками
+Для этого лучше использовать css стили. Такое применение стилей полезно в особенных ситуациях, 
+например при воздействии на внешний вид элементов через javaScript.
+равно как и применеие в стилях атрибута  !important - с ним нужно вести себя тоже осторожно
+и применять в исключительных свойствах. Т.к. применение !important в css и style в html-тегах
+Ведут к нарушению каскадности стилей за счет разности веса селекторов. Подробнее тут:
+http://css.yoksel.ru/specifity/
+-->
+<p style="font-size: 25px; margin:20px 0 !important;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis assumenda, doloremque omnis natus incidunt sint, quod nostrum rem explicabo ipsam voluptatibus, dolor sunt doloribus, a! Delectus rem praesentium dolor beatae.</p>
+</p>
+</div>
+</div>
+</header>
+<section>
+<div class="wrap1">
+<!-- разработчиками не одобряется название селктора транслитом (русское слово английскими буквами) - "spisok"
+Как и семантически невнятные "krasniy"
+лучше давать имена селекторам, измпользуя английские слова, например "list", "red-text"
+Подробнее тут - https://habrahabr.ru/post/303174/
+ -->
+<ul class="spisok">
+<li class="list-item">-Lorem ipsum dolor sit amet, <span class="krasniy">consectetur</span> adipisicing elit. </li>
+<li class="list-item">-Tempore ad earum ipsum officia natus rem blanditiis, unde ullam, nihil cupiditate magnam doloribus repellat exercitationem, saepe soluta!</li>
+<li class="list-item">-Harum non, reiciendis ut!</li>
+</ul>
+
+</div>
+</section>
+  <section>
+    <p>
+
+      <blockquote class="блок-отзывы">
+        You do not have permission to retrieve the URL or link you requested, &nbsp;&nbsp;
+        <p class="wrong"> Please inform the administrator of the referring page, <b> if you think this was a mistake.</b></p>
+    </p>
+
+    </blockquote>
+    <div>
+      Нужно всегда проверять код на наличие таких символов и конвертировать & в соответствующий код HTML
+      <a href="#"><h3>bananas</h3></a>
+    </div>
+  </section>
+
+</body>
+
+</html>
+
+<!-- В целом очень неплохо:) Тебе стоит немного почиать про базовые вещи в html и быть немного внимательнее ;)
+Пару полезных ссылок:
+
+https://webref.ru/html - хороший справочник по html на русском языке
+https://validator.w3.org/nu/#textarea -крутая штука дял проверки своего html
+ -->

@@ -1,0 +1,125 @@
+
+// для селектора navMenu указаны некорректные скобки []. По этой причине не сработали стили
+//Они сработают только со скобками {}
+.navMenu [ 
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: block;
+  max-width: 960px;
+  text-align: center;
+]
+.navMenu li {
+  display: inline-block;
+  margin: 0 15px;
+}
+.navMenu li a {
+  // Тут надо бы указать еденицы, в которых указывается высота шрифта
+  // font-size: 15px; - так хорошо
+  // https://webref.ru/css/font-size - тут подробнее
+  font-size: 15;
+}
+.navMenu li a :hover {
+  color: azure;
+}
+// Порой интерпретатор (браузер) может искаженно воспринять имя шрифта, состоящее из нескольки слов
+// Т.е. воспринять как необходимое только первое слово из фразы Times New Roman (любой другой шрифт)
+// Лучше взять название шрфита в кавычки, вот так "Times New Roman". Тогда браузер наверняка
+// будет искать шрифт с названием "Times New Roman", а не "Times" например
+.wrong {
+	font-family: Times New Roman, serif; 
+  // цвет в HEX-формате выглядит так: #xxx или так #xxxxxx. Т.е. хорошо вот так: #000 
+	color: 000;
+// Между значением и еденицами не должно быть пробела. Хорошо так: 12px 
+	font-size: 12 px;
+//Для использования десятичных чисел стоит использовать ".", а не ",". Хорошо так: 1.5 
+	line-height: 1,5;
+// после margin: 0 стоит поставить ";", так браузер поймет, что описание данного свойства окончено
+	margin: 0                               
+	padding: 10px, 20px, 30px, 40px;        
+
+.wrap1 {
+  max-width: 960px;
+  margin: 0 auto;
+}
+}
+.wrap2 img {
+  display: block;
+  margin: 0 auto;
+  max-width: 200px;
+}
+
+// Как и в html, стили стоит писать "елочкой". Так более читаемо
+// Тут сделано хорошо:
+// .wrap2 img {
+//   display: block;
+//   margin: 0 auto;
+//   max-width: 200px;
+// }
+
+// Тут сделано НЕ хорошо (все на одной линии)
+// .wrap1-boks {
+// margin-bottom: 30px;
+// text-align: justify
+// font-size: 18px;
+// }
+
+// Селктор wrap1-books в html разметке указан как селектор по id: <p id="wrap1-boks">
+// Стоит зименить обращение к селектору
+// .wrap1-boks{} - это обращение к КЛАССУ - НЕ хорошо (в данном случае)
+// #wrap1-boks{} - это обращение к id - хорошо (в данном случае)
+
+.wrap1-boks {
+margin-bottom: 30px;
+// Не зватает ";" в конце строки "text-align: justify"
+text-align: justify
+font-size: 18px;
+}
+
+// #wrap1-boks span {} - тоже самое ^
+.wrap1-boks span {
+color: red;
+}
+
+// Лучше, чтобы каждое свойство начиналось с новой строки
+// list-style: decimal-leading-zero;padding-left: 40px; - НЕ хорошо
+// 
+// Хорошо:
+// list-style: decimal-leading-zero;
+// padding-left: 40px;}
+// Также, нет элемента с селектором "list" в html. поэтому стилине применяются ни к чему 
+.list {
+list-style: decimal-leading-zero;padding-left: 40px;}
+
+.list-item {
+margin-bottom: 20px;
+font-size: 16px;
+color: aqua;
+}
+
+// Вероятно, была поставлена лишняя точка в начале селектора (такого нет html-разметке) ".h1". 
+// По этой причине стили не применились тегу h1
+    h1 {
+font-size: 36px;
+text-align: center;
+margin: 30px 0 20px;
+text-transform: uppercase;
+    }
+
+// Не хватает "." в начале селектора. Поэтому не применяется стиль "krasniy" и "blockLayeredNavigation"
+    .blockLayeredNavigation {
+      background: #999;
+      padding: 20px 0;
+    }
+// Как я говорил в html разметке - стоит изменить имя селектора ".krasniy"
+.krasniy {
+  color: red;
+}
+
+
+// У тебя хорошо получается, стили используешь правильно.
+// Стоит обратить внимание на общепринятые правила написания стилей и быть чуть-чуь внимательней ;)
+// https://webref.ru/css - русскоязычный справочник по стилям. Сначала смотри здесь
+// и не забывай просматривать все свои стили в "панели инструментов разработчика" в барузере
+// Вот тут про Chrome:
+// https://support.google.com/dfp_premium/answer/4497389?hl=ru
